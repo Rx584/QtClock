@@ -37,9 +37,9 @@ class Clock(QMainWindow,Ui_QtClock):
         self.years=int(temp.split("/")[2])+2000
         self.months = int(temp.split("/")[0])
         self.days = int(temp.split("/")[1])
-        self.hours = int(time.strftime("%S"))
+        self.hours = int(time.strftime("%H"))
         self.mins = int(time.strftime("%M"))
-        self.secs = int(time.strftime("%H"))
+        self.secs = int(time.strftime("%S"))
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window = Clock()
