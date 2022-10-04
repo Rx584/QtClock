@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Clock</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>ReadmeResources/bitbug_favicon.ico</normaloff>ReadmeResources/bitbug_favicon.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
