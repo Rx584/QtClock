@@ -7,7 +7,7 @@ QLCDNumber做的时钟，练习PyQt5的使用
 
 该程序由Python编写，点击即用。
 
-![我是测试图片 我是测试图片 我是测试图片](.\ReadmeResources\test.png)
+![我是测试图片 我是测试图片 我是测试图片](ReadmeResources\test.png)
 
 ## 更改代码
 
