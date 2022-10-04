@@ -15,8 +15,16 @@ class Clock(QMainWindow,Ui_QtClock):
         self.hours = 12
         self.mins = 0
         self.secs=0
+        self.timer = QTimer()
+        
+        self.start_button.clicked.connect(self.start_clock)
         self.show()
+    def start_clock(self):
+        self.update_time()
+        self.timer.start(1000)
+        self.timer.timeout.connect(self.update_time)
     def update_time(self):
+        #while(True):
         self.get_time()
         self.year.display(self.years)
         self.month.display(self.months)
@@ -25,14 +33,13 @@ class Clock(QMainWindow,Ui_QtClock):
         self.minutes.display(self.mins)
         self.second.display(self.secs)
     def get_time(self):
-        self.years=int(time.strftime("%Y"))
-        self.months = int(time.strftime("%M"))
-        self.days = int(time.strftime("%D"))
-        self.hours = int(time.strftime("%H"))
+        temp = time.strftime("%D")
+        self.years=int(temp.split("/")[2])+2000
+        self.months = int(temp.split("/")[0])
+        self.days = int(temp.split("/")[1])
+        self.hours = int(time.strftime("%S"))
         self.mins = int(time.strftime("%M"))
-        self.secs = int(time.strftime("%S"))
-
-
+        self.secs = int(time.strftime("%H"))
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window = Clock()
