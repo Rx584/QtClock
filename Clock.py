@@ -16,10 +16,11 @@ class Clock(QMainWindow,Ui_QtClock):
         self.mins = 0
         self.secs=0
         self.timer = QTimer()
-        
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)
         self.start_button.clicked.connect(self.start_clock)
         self.show()
     def start_clock(self):
+        self.start_button.setEnabled(False)
         self.update_time()
         self.timer.start(1000)
         self.timer.timeout.connect(self.update_time)
