@@ -96,11 +96,36 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="start_button">
-      <property name="text">
-       <string>启动！</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="start_button">
+        <property name="text">
+         <string>启动！</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Freamleass">
+        <property name="text">
+         <string>打开窗口无边框</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="windowontop">
+        <property name="text">
+         <string>启用窗口置顶</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="close">
+        <property name="text">
+         <string>关闭</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

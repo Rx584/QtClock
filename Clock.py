@@ -1,7 +1,7 @@
 from ui_Clock import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 import sys
 import time
 
@@ -18,6 +18,9 @@ class Clock(QMainWindow,Ui_QtClock):
         self.timer = QTimer()
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
         self.start_button.clicked.connect(self.start_clock)
+        self.Freamleass.clicked.connect(self.Windowhasnoborder)
+        self.close.clicked.connect(self.closeClock)
+        self.windowontop.clicked.connect(self.windowOnTop)
         self.show()
     def start_clock(self):
         self.start_button.setEnabled(False)
@@ -41,7 +44,17 @@ class Clock(QMainWindow,Ui_QtClock):
         self.hours = int(time.strftime("%H"))
         self.mins = int(time.strftime("%M"))
         self.secs = int(time.strftime("%S"))
+    def Windowhasnoborder(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.Freamleass.setEnabled(False)
+        self.show()
+    def closeClock(self):
+        exit()
+    def windowOnTop(self):
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)
+        self.windowontop.setEnabled(False)
+        self.show()
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window = Clock()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
