@@ -15,6 +15,7 @@ class Clock(QMainWindow,Ui_QtClock):
         self.hours = 12
         self.mins = 0
         self.secs=0
+        self.setWindowIcon(QIcon("./icon.ico"))
         self.timer = QTimer()
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
         self.start_button.clicked.connect(self.start_clock)
