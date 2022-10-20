@@ -1,7 +1,7 @@
 # QtClock
 ## 简介
 
-QLCDNumber做的时钟，练习PyQt5的使用
+QLCDNumber做的时钟，练习PySide6的使用
 
 ## 食用方法
 
