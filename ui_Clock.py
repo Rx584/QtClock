@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 
 ################################################################################
@@ -62,6 +61,11 @@ class Ui_QtClock(object):
         self.label_3.setObjectName(u"label_3")
 
         self.horizontalLayout.addWidget(self.label_3)
+
+        self.week = QLCDNumber(self.centralwidget)
+        self.week.setObjectName(u"week")
+
+        self.horizontalLayout.addWidget(self.week)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -137,7 +141,7 @@ class Ui_QtClock(object):
         QtClock.setWindowTitle(QCoreApplication.translate("QtClock", u"Clock", None))
         self.label.setText(QCoreApplication.translate("QtClock", u"\u5e74", None))
         self.label_2.setText(QCoreApplication.translate("QtClock", u"\u6708", None))
-        self.label_3.setText(QCoreApplication.translate("QtClock", u"\u65e5", None))
+        self.label_3.setText(QCoreApplication.translate("QtClock", u"\u65e5     \u661f\u671f", None))
         self.label_4.setText(QCoreApplication.translate("QtClock", u"\u65f6", None))
         self.label_5.setText(QCoreApplication.translate("QtClock", u"\u5206", None))
         self.label_6.setText(QCoreApplication.translate("QtClock", u"\u79d2", None))

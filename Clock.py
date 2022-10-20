@@ -15,9 +15,11 @@ class Clock(QMainWindow,Ui_QtClock):
         self.hours = 12
         self.mins = 0
         self.secs=0
+        self.weeks = 0
         self.setWindowIcon(QIcon("./icon.ico"))
         self.timer = QTimer()
-        self.setWindowFlags(Qt.WindowStaysOnTopHint)
+        self.topcont = False
+        self.nvb = False
         self.start_button.clicked.connect(self.start_clock)
         self.Freamleass.clicked.connect(self.Windowhasnoborder)
         self.close.clicked.connect(self.closeClock)
@@ -37,6 +39,7 @@ class Clock(QMainWindow,Ui_QtClock):
         self.hour.display(self.hours)
         self.minutes.display(self.mins)
         self.second.display(self.secs)
+        self.week.display(self.weeks)
     def get_time(self):
         temp = time.strftime("%D")
         self.years=int(temp.split("/")[2])+2000
@@ -45,15 +48,27 @@ class Clock(QMainWindow,Ui_QtClock):
         self.hours = int(time.strftime("%H"))
         self.mins = int(time.strftime("%M"))
         self.secs = int(time.strftime("%S"))
+        
+        self.get_week()
+    def get_week(self):
+        week_dict = {"Monday":1,"Tuesday":2,"Wednesday":3,"Thursday":4,"Friday":5,"Saturday":6,"Sunday":7}
+        self.weeks = week_dict[time.strftime("%A")]
     def Windowhasnoborder(self):
-        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.nvb = True
         self.Freamleass.setEnabled(False)
+        self.update_windowflag()
         self.show()
+    def update_windowflag(self):
+        if self.topcont:
+            self.setWindowFlag(Qt.WindowStaysOnTopHint)
+        if self.nvb:
+            self.setWindowFlag(Qt.FramelessWindowHint)
     def closeClock(self):
-        exit()
+        sys.exit()
     def windowOnTop(self):
-        self.setWindowFlags(Qt.WindowStaysOnTopHint)
+        self.topcont = True
         self.windowontop.setEnabled(False)
+        self.update_windowflag()
         self.show()
 if __name__=="__main__":
     app=QApplication(sys.argv)
