@@ -3,21 +3,21 @@
 
 QLCDNumber做的时钟，练习PyQt5的使用
 
-## 使用方法
+## 食用方法
 
-该程序由Python编写，点击即用。
+使用python运行Clock.py
 
-![我是测试图片 我是测试图片 我是测试图片](ReadmeResources/test.png)
+~~~shell	
+python Clock.py
+~~~
 
-## 更改代码
+或者下载Releass,运行Clock.exe
 
-如果你有方法让代码更有趣，按这个步骤进行
+## 使用模块
 
-1.Fork这个仓库
+本代码使用PySide6编写，旧版本使用PyQt5编写
 
-2.新建分支
+## 协议
 
-3.新建Pull Request
-
-4.等待同意
+遵守PySide6所使用的LGPL协议，本代码使用LGPL协议进行开源。
 
