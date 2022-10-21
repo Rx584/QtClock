@@ -4,6 +4,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 import sys
 import time
+import random
 
 class Clock(QMainWindow,Ui_QtClock):
     def __init__(self):
@@ -16,14 +17,17 @@ class Clock(QMainWindow,Ui_QtClock):
         self.mins = 0
         self.secs=0
         self.weeks = 0
+        self.data=[]
         self.setWindowIcon(QIcon("./icon.ico"))
         self.timer = QTimer()
         self.topcont = False
         self.nvb = False
+        self.set_ckickensoup()
         self.start_button.clicked.connect(self.start_clock)
         self.Freamleass.clicked.connect(self.Windowhasnoborder)
         self.close.clicked.connect(self.closeClock)
         self.windowontop.clicked.connect(self.windowOnTop)
+        self.reset_soup.clicked.connect(self.set_ckickensoup)
         self.show()
     def start_clock(self):
         self.start_button.setEnabled(False)
@@ -70,6 +74,11 @@ class Clock(QMainWindow,Ui_QtClock):
         self.windowontop.setEnabled(False)
         self.update_windowflag()
         self.show()
+    def set_ckickensoup(self):
+        with open("chicksoup.txt","r",encoding="utf-8")as f:
+            self.data = f.read()
+        self.data = self.data.split("\n")
+        self.soup.setText(self.data[random.randint(0,23)])
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window = Clock()

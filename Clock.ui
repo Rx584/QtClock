@@ -122,6 +122,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="reset_soup">
+        <property name="text">
+         <string>换汤</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="close">
         <property name="text">
          <string>关闭</string>
@@ -129,6 +136,13 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+     <widget class="QLabel" name="soup">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
